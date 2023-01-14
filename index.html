@@ -42,6 +42,10 @@
     let delay = 50;
     let x = 0;
     let y = 0;
+    let initialX = 0;
+    let initialY = 0;
+    let swipeX = 0;
+    let swipeY = 0;
 
     for (let worker of workers) {
         worker.style.left = `${Math.random() * 500}px`;
@@ -57,6 +61,26 @@
             worker.style.left = `${x + 10 + Math.random()*50}px`;
             worker.style.top = `${y + 10 + Math.random()*50}px`;
         }
+    });
+
+    document.addEventListener("touchstart", event => {
+        initialX = event.touches[0].clientX;
+        initialY = event.touches[0].clientY;
+    });
+
+    document.addEventListener("touchmove", event => {
+        swipeX = event.touches[0].clientX - initialX;
+        swipeY = event.touches[0].clientY - initialY;
+        x += swipeX;
+        y += swipeY;
+        queen.style.left = `${x}px`;
+        queen.style.top = `${y}px`;
+        for (let worker of workers) {
+        worker.style.left = `${(worker.initialLeft + (x - worker.initialLeft) * 0.1)}px`;
+        worker.style.top = `${(worker.initialTop + (y - worker.initialTop) * 0.1)}px`;
+        }
+        initialX = event.touches[0].clientX;
+        initialY = event.touches[0].clientY;
     });
 </script>
 </html>
