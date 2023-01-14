@@ -76,8 +76,8 @@
         queen.style.left = `${x}px`;
         queen.style.top = `${y}px`;
         for (let worker of workers) {
-        worker.style.left = `${(worker.initialLeft + (x - worker.initialLeft) * 0.1)}px`;
-        worker.style.top = `${(worker.initialTop + (y - worker.initialTop) * 0.1)}px`;
+            worker.style.left = `${x + 10 + Math.random()*50}px`;
+            worker.style.top = `${y + 10 + Math.random()*50}px`;
         }
         initialX = event.touches[0].clientX;
         initialY = event.touches[0].clientY;
