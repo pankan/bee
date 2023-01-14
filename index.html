@@ -12,19 +12,18 @@
     <div class="worker">🐝</div>
     <div class="worker">🐝</div>
     <div class="worker">🐝</div>
-    <!-- <div class="worker" style="top: 20px; left: 20px;">🐝</div>
-    <div class="worker" style="top: 20px; right: 20px;">🐝</div>
-    <div class="worker" style="bottom: 20px; left: 20px;">🐝</div>
-    <div class="worker" style="bottom: 20px; right: 20px;">🐝</div> -->
+    <div class="credits">
+        90% of this is coded by ChatGPT
+    </div>
 </body>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200&display=swap');
     body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        overflow: hidden;
+        width: 100vw;
         height: 100vh;
         cursor: none;
-        overscroll-behavior-y: contain;
+        font-family: 'Plus Jakarta Sans', sans-serif;
     }
     #queen {
         position: absolute;
@@ -35,6 +34,16 @@
     .worker{
         position: absolute;
         font-size: 14px;
+    }
+    
+    .credits{
+        color: #777;
+        font-size: 12px;
+        font-weight: 200;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        text-align: right;
     }
 </style>
 <script>
