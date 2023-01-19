@@ -13,7 +13,7 @@
     <div class="worker">🐝</div>
     <div class="worker">🐝</div>
     <div class="credits">
-        ChatGPT generated 90% of the code for this website
+        80% of the code for this website is generated with ChatGPT
     </div>
 </body>
 <style>
@@ -24,6 +24,14 @@
         height: 100vh;
         cursor: none;
         font-family: 'Plus Jakarta Sans', sans-serif;
+        background:
+            radial-gradient(circle farthest-side at 0% 50%,#fcf5e3 23.5%,rgba(240,166,17,0) 0)21px 30px,
+            radial-gradient(circle farthest-side at 0% 50%,#fce9cd 24%,rgba(240,166,17,0) 0)19px 30px,
+            linear-gradient(#fcf5e3 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#fcf5e3 0)0 0,
+            linear-gradient(150deg,#fcf5e3 24%,#fce9cd 0,#fce9cd 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#fce9cd 0,#fce9cd 76%,#fcf5e3 0)0 0,
+            linear-gradient(30deg,#fcf5e3 24%,#fce9cd 0,#fce9cd 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#fce9cd 0,#fce9cd 76%,#fcf5e3 0)0 0,
+            linear-gradient(90deg,#fce9cd 2%,#fcf5e3 0,#fcf5e3 98%,#fce9cd 0%)0 0 #fcf5e3;
+        background-size: 40px 60px;
     }
     #queen {
         position: absolute;
@@ -37,7 +45,7 @@
     }
     
     .credits{
-        color: #777;
+        color: rgb(66, 38, 21);
         font-size: 12px;
         font-weight: 200;
         position: fixed;
@@ -49,7 +57,7 @@
 <script>
     const queen = document.getElementById("queen");
     const workers = document.getElementsByClassName("worker");
-    let delay = 50;
+    let delay = 10;
     let x = 0;
     let y = 0;
     let initialX = 0;
