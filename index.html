@@ -13,7 +13,8 @@
     <div class="worker">🐝</div>
     <div class="worker">🐝</div>
     <div class="credits">
-        80% of the code for this website is generated with ChatGPT
+        80% of the code for this website is generated with ChatGPT. <br />
+        Bee buzzing sound by aktivfilm from pixabay.
     </div>
 </body>
 <style>
@@ -64,6 +65,8 @@
     let initialY = 0;
     let swipeX = 0;
     let swipeY = 0;
+    let buzzingSound = new Audio("sound.mp3");
+    let timeoutId;
 
     for (let worker of workers) {
         worker.style.left = `${Math.random() * 500}px`;
@@ -79,6 +82,13 @@
             worker.style.left = `${x + 10 + Math.random()*50}px`;
             worker.style.top = `${y + 10 + Math.random()*50}px`;
         }
+        if (!buzzingSound.paused) {
+            clearTimeout(timeoutId);
+        }
+        buzzingSound.play();
+        timeoutId = setTimeout(() => {
+            buzzingSound.pause();
+        }, 200);
     });
 
     document.addEventListener("touchstart", event => {
@@ -99,6 +109,13 @@
         }
         initialX = event.touches[0].clientX;
         initialY = event.touches[0].clientY;
+        if (!buzzingSound.paused) {
+            clearTimeout(timeoutId);
+        }
+        buzzingSound.play();
+        timeoutId = setTimeout(() => {
+            buzzingSound.pause();
+        }, 200);
     });
 </script>
 </html>
